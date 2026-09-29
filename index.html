@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NIRAI | Everything You Love</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- LOADER -->
+
+<div id="loader">
+    <div class="loader-logo">NIRAI</div>
+    <div class="loader-line"></div>
+</div>
+
+
+<!-- TOP OFFER BAR -->
+
+<div class="top-bar">
+    <span>🔥 Mega Sale is Live</span>
+    <span>Free Delivery on orders above ₹499</span>
+    <span>⚡ Limited Time Deals</span>
+</div>
+
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <div class="logo" onclick="goHome()">
+        <span>N</span>IRAI
+    </div>
+
+    <div class="location">
+        <small>Deliver to</small>
+        <b>📍 India</b>
+    </div>
+
+    <div class="search-box">
+
+        <select id="searchCategory">
+            <option value="all">All</option>
+            <option value="electronics">Electronics</option>
+            <option value="fashion">Fashion</option>
+            <option value="beauty">Beauty</option>
+            <option value="home">Home</option>
+            <option value="grocery">Grocery</option>
+        </select>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products, brands and more..."
+        >
+
+        <button onclick="searchProducts()">🔍</button>
+
+    </div>
+
+    <div class="nav-actions">
+
+        <button class="nav-btn" onclick="openLogin()">
+            <small>Hello, Sign in</small>
+            <b>Account</b>
+        </button>
+
+        <button class="icon-btn" onclick="showWishlist()">
+            ♡
+            <span id="wishCount">0</span>
+        </button>
+
+        <button class="cart-btn" onclick="openCart()">
+            🛒
+            <span id="cartCount">0</span>
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- CATEGORY NAV -->
+
+<nav class="category-nav">
+
+    <a href="#categories">☰ Categories</a>
+    <a href="#deals">Today's Deals</a>
+    <a href="#products">Best Sellers</a>
+    <a href="#products">New Arrivals</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#footer">Customer Service</a>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-tag">WELCOME TO NIRAI</span>
+
+        <h1>
+            Everything You Need.
+            <span>All in NIRAI.</span>
+        </h1>
+
+        <p>
+            Discover amazing products, exciting deals and everyday essentials
+            at prices you'll love.
+        </p>
+
+        <div class="hero-buttons">
+            <button class="primary-btn" onclick="scrollToProducts()">
+                Shop Now →
+            </button>
+
+            <button class="outline-btn" onclick="scrollToCategories()">
+                Explore Categories
+            </button>
+        </div>
+
+        <div class="hero-stats">
+            <div>
+                <strong>10K+</strong>
+                <span>Products</span>
+            </div>
+
+            <div>
+                <strong>50K+</strong>
+                <span>Happy Customers</span>
+            </div>
+
+            <div>
+                <strong>4.8★</strong>
+                <span>Customer Rating</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="hero-visual">
+
+        <div class="floating-card card-one">
+            ⚡
+            <div>
+                <b>Flash Deal</b>
+                <small>Up to 70% OFF</small>
+            </div>
+        </div>
+
+        <div class="hero-circle">
+
+    <video src="web online.mp4" type="video/mp4" alt="'sp"style="width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    <video autoplay loop muted playsinline class="hero-img">
+    <source src="c:\Users\PC\Downloads\web online.mp4" type="video/mp4">
+</video>">
+    Your browser does not support the video tag.
+</video>
+        <div class="floating-card card-two">
+            🚚
+            <div>
+                <b>Fast Delivery</b>
+                <small>Across India</small>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section class="section" id="categories">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="eyebrow">EXPLORE</span>
+            <h2>Shop by Category</h2>
+        </div>
+
+        <button onclick="showAllProducts()" class="view-btn">
+            View All →
+        </button>
+
+    </div>
+
+    <div class="category-grid">
+
+        <div class="category-card" onclick="filterCategory('electronics')">
+            <div class="category-icon">📱</div>
+            <h3>Electronics</h3>
+            <p>Smart gadgets & devices</p>
+        </div>
+
+        <div class="category-card" onclick="filterCategory('fashion')">
+            <div class="category-icon">👕</div>
+            <h3>Fashion</h3>
+            <p>Style for every moment</p>
+        </div>
+
+        <div class="category-card" onclick="filterCategory('beauty')">
+            <div class="category-icon">💄</div>
+            <h3>Beauty</h3>
+            <p>Glow & care essentials</p>
+        </div>
+
+        <div class="category-card" onclick="filterCategory('home')">
+            <div class="category-icon">🏠</div>
+            <h3>Home</h3>
+            <p>Make your space better</p>
+        </div>
+
+        <div class="category-card" onclick="filterCategory('grocery')">
+            <div class="category-icon">🥑</div>
+            <h3>Grocery</h3>
+            <p>Fresh everyday essentials</p>
+        </div>
+
+        <div class="category-card" onclick="filterCategory('sports')">
+            <div class="category-icon">🏃</div>
+            <h3>Sports</h3>
+            <p>Move. Play. Repeat.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DEALS -->
+
+<section class="deal-section" id="deals">
+
+    <div class="deal-text">
+
+        <span class="eyebrow">LIMITED TIME</span>
+
+        <h2>Crazy Deals<br>Every Day.</h2>
+
+        <p>
+            Grab your favourites before the timer ends.
+        </p>
+
+        <div class="countdown">
+
+            <div>
+                <b id="hours">08</b>
+                <small>Hours</small>
+            </div>
+
+            <span>:</span>
+
+            <div>
+                <b id="minutes">42</b>
+                <small>Minutes</small>
+            </div>
+
+            <span>:</span>
+
+            <div>
+                <b id="seconds">18</b>
+                <small>Seconds</small>
+            </div>
+
+        </div>
+
+        <button class="primary-btn" onclick="scrollToProducts()">
+            Grab Deals →
+        </button>
+
+    </div>
+
+    <div class="deal-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85"
+            alt="Shopping deal"
+        >
+
+        <div class="discount-badge">
+            UP TO
+            <strong>70%</strong>
+            OFF
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section class="section" id="products">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="eyebrow">JUST FOR YOU</span>
+            <h2>Popular Products</h2>
+        </div>
+
+        <div class="filter-buttons">
+
+            <button class="active" onclick="showAllProducts()">All</button>
+            <button onclick="filterCategory('electronics')">Electronics</button>
+            <button onclick="filterCategory('fashion')">Fashion</button>
+            <button onclick="filterCategory('beauty')">Beauty</button>
+            <button onclick="filterCategory('home')">Home</button>
+
+        </div>
+
+    </div>
+
+    <div class="product-grid" id="productGrid"></div>
+
+</section>
+
+
+<!-- TRUST -->
+
+<section class="trust-section">
+
+    <div class="trust-card">
+        <span>🚚</span>
+        <div>
+            <b>Free Delivery</b>
+            <p>On orders above ₹499</p>
+        </div>
+    </div>
+
+    <div class="trust-card">
+        <span>↩️</span>
+        <div>
+            <b>Easy Returns</b>
+            <p>7 day return policy</p>
+        </div>
+    </div>
+
+    <div class="trust-card">
+        <span>🔒</span>
+        <div>
+            <b>Secure Payment</b>
+            <p>100% protected checkout</p>
+        </div>
+    </div>
+
+    <div class="trust-card">
+        <span>💬</span>
+        <div>
+            <b>24/7 Support</b>
+            <p>We're here to help</p>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- REVIEWS -->
+
+<section class="section reviews-section" id="reviews">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="eyebrow">CUSTOMER LOVE</span>
+            <h2>What People Say</h2>
+        </div>
+
+    </div>
+
+    <div class="reviews-grid">
+
+        <div class="review-card">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                "NIRAI has such a clean shopping experience.
+                The products arrived exactly as shown!"
+            </p>
+
+            <div class="review-user">
+                <div class="avatar">A</div>
+                <div>
+                    <b>Ananya</b>
+                    <small>Verified Customer</small>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="review-card">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                "Loved the product quality and super-fast delivery.
+                Definitely shopping here again."
+            </p>
+
+            <div class="review-user">
+                <div class="avatar">R</div>
+                <div>
+                    <b>Rahul</b>
+                    <small>Verified Customer</small>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="review-card">
+
+            <div class="stars">★★★★☆</div>
+
+            <p>
+                "The deals are really good and the website is
+                very easy to use on mobile."
+            </p>
+
+            <div class="review-user">
+                <div class="avatar">S</div>
+                <div>
+                    <b>Sneha</b>
+                    <small>Verified Customer</small>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- NEWSLETTER -->
+
+<section class="newsletter">
+
+    <div>
+
+        <span class="eyebrow">STAY UPDATED</span>
+
+        <h2>Get the best deals in your inbox.</h2>
+
+        <p>
+            New arrivals, exclusive offers and special discounts.
+        </p>
+
+    </div>
+
+    <div class="newsletter-form">
+
+        <input
+            type="email"
+            id="newsletterEmail"
+            placeholder="Enter your email"
+        >
+
+        <button onclick="subscribeNewsletter()">
+            Subscribe
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer id="footer">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+
+            <div class="logo">
+                <span>N</span>IRAI
+            </div>
+
+            <p>
+                A world of products, possibilities and
+                prices you'll love.
+            </p>
+
+            <div class="socials">
+                <span>f</span>
+                <span>𝕏</span>
+                <span>◎</span>
+                <span>in</span>
+            </div>
+
+        </div>
+
+        <div>
+            <h4>Get to Know Us</h4>
+            <a>About NIRAI</a>
+            <a>Careers</a>
+            <a>Press</a>
+            <a>Investor Relations</a>
+        </div>
+
+        <div>
+            <h4>Make Money</h4>
+            <a>Sell on NIRAI</a>
+            <a>Become a Partner</a>
+            <a>Advertise Products</a>
+            <a>Affiliate Program</a>
+        </div>
+
+        <div>
+            <h4>Customer Care</h4>
+            <a>Help Center</a>
+            <a>Returns</a>
+            <a>Track Order</a>
+            <a>Contact Us</a>
+        </div>
+
+        <div>
+            <h4>Let Us Help You</h4>
+            <a>Your Account</a>
+            <a>Your Orders</a>
+            <a>Shipping</a>
+            <a>Privacy</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <span>© 2026 NIRAI. All rights reserved.</span>
+
+        <div>
+            <span>English</span>
+            <span>India 🇮🇳</span>
+            <span>Privacy</span>
+            <span>Terms</span>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- LOGIN MODAL -->
+
+<div class="modal-overlay" id="loginModal">
+
+    <div class="modal">
+
+        <button class="close-btn" onclick="closeLogin()">×</button>
+
+        <div class="login-logo">N<span>IRAI</span></div>
+
+        <h2>Welcome Back 👋</h2>
+
+        <p>Sign in to continue shopping.</p>
+
+        <input
+            type="text"
+            id="loginName"
+            placeholder="Your Name"
+        >
+
+        <input
+            type="email"
+            id="loginEmail"
+            placeholder="Email Address"
+        >
+
+        <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+        >
+
+        <button class="primary-btn full" onclick="loginUser()">
+            Continue
+        </button>
+
+        <small class="login-note">
+            By continuing, you agree to NIRAI's Terms & Privacy Policy.
+        </small>
+
+    </div>
+
+</div>
+
+
+<!-- CART DRAWER -->
+
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart(event)">
+
+    <div class="cart-drawer" onclick="event.stopPropagation()">
+
+        <div class="cart-header">
+
+            <h2>Your Cart</h2>
+
+            <button onclick="closeCart()">
+                ×
+            </button>
+
+        </div>
+
+        <div id="cartItems"></div>
+
+        <div class="cart-footer">
+
+            <div class="subtotal">
+                <span>Subtotal</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+
+            <p class="delivery-note">
+                🚚 Free delivery on orders above ₹499
+            </p>
+
+            <button class="primary-btn full" onclick="proceedToBuy()">
+                Proceed to Buy →
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div id="toast"></div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>

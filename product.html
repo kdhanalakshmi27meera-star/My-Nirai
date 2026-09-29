@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NIRAI | Product</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="top-bar">
+    <span>🔥 NIRAI Mega Sale</span>
+    <span>Free Delivery above ₹499</span>
+    <span>⚡ Limited Deals</span>
+</div>
+
+
+<header class="navbar">
+
+    <div class="logo" onclick="goHome()">
+        <span>N</span>IRAI
+    </div>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+            onkeydown="handleSearch(event)"
+        >
+
+        <button onclick="searchProducts()">🔍</button>
+
+    </div>
+
+    <div class="nav-actions">
+
+        <button class="nav-btn" onclick="openLogin()">
+            <small>Hello, Sign in</small>
+            <b>Account</b>
+        </button>
+
+        <button class="icon-btn" onclick="showWishlist()">
+            ♡
+            <span id="wishCount">0</span>
+        </button>
+
+        <button class="cart-btn" onclick="openCart()">
+            🛒
+            <span id="cartCount">0</span>
+        </button>
+
+    </div>
+
+</header>
+
+
+<nav class="category-nav">
+
+    <a onclick="goHome()">← Back to NIRAI</a>
+    <a onclick="goHome()">Today's Deals</a>
+    <a onclick="goHome()">Best Sellers</a>
+    <a onclick="goHome()">Customer Service</a>
+
+</nav>
+
+
+<main class="product-details-container" id="productDetails">
+
+    <!-- JS loads product -->
+
+</main>
+
+
+<!-- CART -->
+
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart(event)">
+
+    <div class="cart-drawer" onclick="event.stopPropagation()">
+
+        <div class="cart-header">
+
+            <h2>Your Cart</h2>
+
+            <button onclick="closeCart()">×</button>
+
+        </div>
+
+        <div id="cartItems"></div>
+
+        <div class="cart-footer">
+
+            <div class="subtotal">
+                <span>Subtotal</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+
+            <button
+                class="primary-btn full"
+                onclick="proceedToBuy()"
+            >
+                Proceed to Buy →
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- LOGIN -->
+
+<div class="modal-overlay" id="loginModal">
+
+    <div class="modal">
+
+        <button class="close-btn" onclick="closeLogin()">×</button>
+
+        <div class="login-logo">
+            N<span>IRAI</span>
+        </div>
+
+        <h2>Welcome Back 👋</h2>
+
+        <p>Sign in to continue shopping.</p>
+
+        <input
+            type="text"
+            id="loginName"
+            placeholder="Your Name"
+        >
+
+        <input
+            type="email"
+            id="loginEmail"
+            placeholder="Email Address"
+        >
+
+        <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+        >
+
+        <button
+            class="primary-btn full"
+            onclick="loginUser()"
+        >
+            Continue
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- REVIEW MODAL -->
+
+<div class="modal-overlay" id="reviewModal">
+
+    <div class="modal review-modal">
+
+        <button
+            class="close-btn"
+            onclick="closeReview()"
+        >
+            ×
+        </button>
+
+        <h2>Write a Review ⭐</h2>
+
+        <p>Share your experience with this product.</p>
+
+        <div class="rating-select">
+
+            <button onclick="setRating(1)">★</button>
+            <button onclick="setRating(2)">★</button>
+            <button onclick="setRating(3)">★</button>
+            <button onclick="setRating(4)">★</button>
+            <button onclick="setRating(5)">★</button>
+
+        </div>
+
+        <textarea
+            id="reviewText"
+            placeholder="Write your review..."
+        ></textarea>
+
+        <button
+            class="primary-btn full"
+            onclick="submitReview()"
+        >
+            Submit Review
+        </button>
+
+    </div>
+
+</div>
+
+
+<div id="toast"></div>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
